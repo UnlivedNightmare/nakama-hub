@@ -16,6 +16,7 @@
                 <li><a href="#crew">The Crew</a></li>
                 <li><a href="#trending">Trending</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -79,6 +80,86 @@
                 <p>Nakama hub is a passion project built by a dad with a crew of his own. The mission: a single place for fans who live at the intersection of gaming and anime, with a kid-friendly section the whole crew can enjoy.</p>
                 <p>Built with care, coffee, and a lot of late-night learning.</p>
             </header>
+        </section>
+
+        <section id="contact">
+            <header>
+                <h2>Send a Den Den Mushi</h2>
+                <p>Drop us a transmisssion. we sail on adventure tips, feature requests, and hellos.</p>
+            </header>
+
+            <form action="#" method="post">
+
+                <fieldset>
+                    <legend>Your details</legend>
+
+                    <p>
+                        <label for="name">Your name</label>
+                        <input 
+                            type="text" 
+                            id="name" 
+                            name="name" 
+                            required 
+                            autocomplete="name" 
+                            minlength="2" 
+                            maxlength="60"
+                        >
+                    </p>
+
+                    <p>
+                        <label for="email">Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            autocomplete="email"
+                            placeholder="you@example.com"
+                        >
+                    </p>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Your transmission</legend>
+
+                    <p>
+                        <label for="topic">What's this about?</label>
+                        <select id="topic" name="topic" required>
+                            <option value="">-- Pick one --</option>
+                            <option value="feature">Feature request</option>
+                            <option value="bug">Bug report</option>
+                            <option value=" recommendation">Recommendation for the crew</option>
+                            <option value="hello">Just saying hi</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="massage">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="6"
+                            required
+                            minlength="10"
+                            maxlength="1000"
+                            placeholder="What's on your mind, captain?"
+                        ></textarea>
+                    </p>
+
+                    <p>
+                        <label>
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            Add me to the crew log (occasional updates and adventures, no spam)
+                        </label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button type="submit">Send transmission</button>
+                </p>
+            </form>
+
         </section>
             
     </main>
