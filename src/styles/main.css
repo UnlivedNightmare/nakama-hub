@@ -1,0 +1,142 @@
+/* === Variable === */
+:root {
+    --bg: #0b1a2e;
+    --bg-card: #102237;
+    --text: #efe7d4;
+    --text-muted: #9aa9bd;
+    --gold: #d4a04a;
+    --teal: #4eb6a8;
+    --max-width: 800px;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --radius: 8px;
+}
+
+/* === Reset === */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* === Base ===*/
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: var(--space-lg);
+}
+
+/* === Layout === */
+header, main, footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+header {
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--gold);
+    margin-bottom: var(--space-lg);
+}
+
+footer {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--gold);
+    margin-top: var(--space-lg);
+    color: var(--text-muted);
+}
+
+/* === Typography === */
+h1, h2, h3 {
+    color: var(--gold);
+    margin-bottom: var(--space-md);
+}
+
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; margin-top: var(--space-lg); }
+h3 { font-size: 1.25rem; margin-top: var(--space-md); }
+
+p{
+    margin-bottom: var(--space-md);
+}
+
+/* === Links === */
+a {
+    color: var(--teal);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* :focus-visible only shows focus rin for keyboard users, not mouse clicks */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+/* === Navigation ===*/
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: var(--space-md);
+}
+
+/* === Sections (cards) === */
+main > section {
+    background: var(--bg-card);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border-radius: var(--radius);
+}
+
+/* === Form === */
+input, select, textarea {
+    width: 100%;
+    padding: var(--space-md);
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid var(--text-muted);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    margin-bottom: var(--space-md);
+}
+
+label {
+    display: block;
+    margin-bottom: var(--space-sm);
+    color: var(--text-muted);
+}
+
+fieldset {
+    border: 1px solid var(--text-muted);
+    padding: var(--space-md);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-sm);
+}
+
+legend {
+    color: var(--gold);
+    padding: 0 var(--space-sm);
+}
+
+button {
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--gold);
+    color: var(--bg);
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
