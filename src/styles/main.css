@@ -35,17 +35,33 @@ header, main, footer {
     margin: 0 auto;
 }
 
+/* === Header - flex nav bar === */
 header {
+    max-width: var(--max-width);
+    margin: 0 auto var(--space-lg);
     padding-bottom: var(--space-md);
     border-bottom: 1px solid var(--gold);
-    margin-bottom: var(--space-lg);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
 }
 
+/* === Footer === */
 footer {
+    max-width: var(--max-width);
+    margin: var(--space-lg) auto 0;
     padding-top: var(--space-md);
     border-top: 1px solid var(--gold);
-    margin-top: var(--space-lg);
     color: var(--text-muted);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
 }
 
 /* === Typography === */
@@ -81,6 +97,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* === Navigation ===*/
 nav ul {
     list-style: none;
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
 }
 
 nav li {
@@ -88,12 +107,34 @@ nav li {
     margin-right: var(--space-md);
 }
 
-/* === Sections (cards) === */
+/* === Sections === */
 main > section {
     background: var(--bg-card);
     padding: var(--space-lg);
     margin-bottom: var(--space-lg);
     border-radius: var(--radius);
+}
+
+/* Articles inside sections - each one is a card */
+main > section > article {
+    background: var--bg;
+    padding: var(--space-md);
+    border-radius: var(--radius);
+    border: 1px solid #1d3553;
+    margin-bottom: var(--space-md);
+}
+
+main > section > article:last-child {
+    margin-bottom: 0;
+}
+
+/* Section's own header - don't inherit the page header flex styles */
+main > section > header {
+    display: block;
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: var(--space-md);
+    max-width: none;
 }
 
 /* === Form === */
@@ -128,6 +169,7 @@ legend {
 }
 
 button {
+    width: auto;
     padding: var(--space-sm) var(--space-lg);
     background: var(--gold);
     color: var(--bg);
@@ -135,8 +177,15 @@ button {
     border-radius: var(--radius);
     font-weight: 600;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 button:hover {
     opacity: 0.9;
+}
+
+/* use :has() to target only the paragraph wrapping the submit button */
+form p:has(button) {
+    display:flex;
+    justify-content:flex-end;
 }
