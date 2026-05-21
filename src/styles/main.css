@@ -117,7 +117,7 @@ main > section {
 
 /* Articles inside sections - each one is a card */
 main > section > article {
-    background: var--bg;
+    background: var(--bg);
     padding: var(--space-md);
     border-radius: var(--radius);
     border: 1px solid #1d3553;
@@ -128,13 +128,40 @@ main > section > article:last-child {
     margin-bottom: 0;
 }
 
-/* Section's own header - don't inherit the page header flex styles */
+/* Section's own header - don't inherit the page header (h2 + intro p) — block layout */
 main > section > header {
     display: block;
     border-bottom: none;
     padding-bottom: 0;
     margin-bottom: var(--space-md);
     max-width: none;
+}
+
+/* === The card grid magic === */
+/* Any section that contains multiple articles becomes a card grid wrapper */
+main > section:has(article + article) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+}
+
+/* The header still takes the full row */
+main > section:has(article + article) > header {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+/* Responsice card grid for articles */
+main > section:has(article + article) {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* === Article cards === */
+main > section > article {
+    background: var(--bg);
+    padding: var(--space-md);
+    border-radius: var(--radius);
+    border: 1px solid #1d3553;
 }
 
 /* === Form === */
